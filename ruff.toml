@@ -1,0 +1,40 @@
+select = [
+    "E",   # pycodestyle (PEP8)
+    "F",   # pyflakes (errors)
+    "I",   # isort (import sorting)
+    "B",   # flake8-bugbear (common bugs)
+    "UP",  # pyupgrade (modern Python)
+    "A",   # flake8-builtins (avoid shadowing built-ins)
+    "C4",  # flake8-comprehensions (optimize comprehensions)
+    "DTZ", # flake8-datetimez (timezone-aware datetimes)
+    "SIM", # flake8-simplify (simplify logic)
+    "TID", # flake8-tidy-imports (e.g. discourage importing everything)
+    "PL",  # pylint rules (lightweight set)
+]
+line-length  = 96
+indent-width = 4
+extend-include = ["*.ipynb"]
+
+[lint]
+select = [
+    "ANN",   # Checks for missing type annotations
+    "D",     # Checks for missing docstrings
+    "F401",  # Checks for unused imports
+]
+
+ignore = [
+    "ANN101",  # Ignore missing self type annotation in methods
+    "ANN102",  # Ignore missing cls type annotation in class methods
+]
+
+[lint.flake8-annotations]
+suppress-none-returning = false  # Require return types even if None
+
+[lint.pydocstyle]
+convention = "google"
+
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
